@@ -1,0 +1,51 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Submission {
+  id: String!
+  createDate: String!
+  updateDate: String!
+  repositoryUrl: String!
+  status: String!
+  grade: Float!
+  challenge: Challenge!
+}
+
+type Challenge {
+  id: String!
+  createDate: String!
+  updateDate: String!
+  title: String!
+  description: String!
+  submissions: [Submission!]
+}
+
+type Query {
+  getAllChallenges(skip: Float!, take: Float!, search: String!): [Challenge!]!
+  getAllSubmissions(skip: Float!, take: Float!, dateEnd: String!, dateStart: String!, status: String!): [Submission!]!
+  getSubmissionById(id: String!): Submission!
+}
+
+type Mutation {
+  createChallenge(challenge: CreateChallengeDTO!): Challenge!
+  updateChallenge(challenge: UpdateChallengeDTO!): Challenge!
+  deleteChallenge(id: String!): String!
+  answerChallenge(submission: CreateSubmissionDTO!): Submission!
+}
+
+input CreateChallengeDTO {
+  title: String!
+  description: String!
+}
+
+input UpdateChallengeDTO {
+  id: String!
+  title: String!
+  description: String!
+}
+
+input CreateSubmissionDTO {
+  repositoryUrl: String!
+  challengeId: String!
+}
