@@ -1,8 +1,7 @@
 ## Description
 
  - As interações com os desafios e submissões desenvolvidas no Postman podem ser importadas por esse [Link](https://www.getpostman.com/collections/04f2804b4ddb2777baf2);
- - A imagem do postgres sugerida para o uso ("bitnami/postgresql") estava tendo problema com a criação de uuidv4, então foi trocado para a imagem do [Hub.docker](https://hub.docker.com/_/postgres) e funcionou perfeitamente.
- 
+
 
 ## Installation
 
